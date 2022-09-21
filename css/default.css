@@ -12,10 +12,29 @@
     clear: both;
 }
 
+.sec-tit {
+    font-size: 2.625em;
+    color: #3F51B5;
+    font-weight: normal;
+}
+
+.divider {
+    width: 90%;
+    max-width: 1132px;
+    margin: 0 auto;
+    margin-top: 77px;
+    background: #EEE;
+}
+
 
 
 /* 태블릿용 CSS */
 @media all and (min-width: 768px) {
+    /* 기본 CSS */
+    .divider {
+        margin-top: 124px;
+    }
+
     
 }
 
