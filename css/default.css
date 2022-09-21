@@ -1,0 +1,26 @@
+/* 모바일용 CSS */
+/* 기본 CSS */
+.container {
+    width: 90%;
+    max-width: 1132px;
+    margin: 0 auto;
+}
+
+.cfixed::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+
+/* 태블릿용 CSS */
+@media all and (min-width: 768px) {
+    
+}
+
+
+/* PC용 CSS */
+@media all and (min-width: 960px) {
+    
+}
