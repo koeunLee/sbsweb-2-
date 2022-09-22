@@ -1,3 +1,9 @@
+:root {
+    --main-color: #3F51B5;
+    --main-border-1: #303F9F;
+}
+
+
 /* 모바일용 CSS */
 /* 기본 CSS */
 .container {
@@ -6,7 +12,7 @@
     margin: 0 auto;
 }
 
-.cfixed::after {
+.cfixed::after, .container::after {
     display: block;
     content: "";
     clear: both;
@@ -14,7 +20,7 @@
 
 .sec-tit {
     font-size: 2.625em;
-    color: #3F51B5;
+    color: var(--main-color);
     font-weight: normal;
 }
 
@@ -23,9 +29,77 @@
     max-width: 1132px;
     margin: 0 auto;
     margin-top: 77px;
-    background: #EEE;
+    background: #EEE;   /* hr태그는 보기에는 선으로 보이지만 아주 얇은 사각형이므로 background 로 색을 줄 수 있다.*/
 }
 
+.m-divider {
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 77px;
+    background: var(--main-color);
+}
+
+.blind {
+    position: absolute;
+    width: 0;   /* 공간도 없앤다. */
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;   /* 저멀리 치운다. */
+    overflow: hidden;
+} /* placeholder 에 표기되어 보여지므로 label 태그 사이에 있는 똑같은 내용은 보일 필요가 없어서 안보이게 해주는 것이다. 서로 쌍을 맞추기 위해 처음부터 안 만들 수는 없어서 만들고 숨긴다.  */
+
+/* 모바일 - 헤더 영역 CSS */
+.header {
+    position: relative;
+    padding: 18px 5%;
+}
+
+.header .logo {
+    float: left;
+}
+
+.header .logo a {
+    font-size: 1.625em;
+    color: var(--main-color);
+    font-weight: normal;
+}
+
+.header .gnb {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.header .gnb li {
+    border-bottom: 1px solid var(--main-border-1);
+}
+
+.header .gnb li a {
+    display: block;  /* inline인 a태그를 block으로 바꿔야 padding등 적용가능 */
+    padding: 14px 0 14px 5%;
+    color: white;
+    font-size: 0.875em;
+}
+
+.header .menu-toggle-btn {
+    float: right;
+    width: 20px;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.header .menu-toggle-btn span {
+    display: block;  /* inline인 span태그를 block으로 바꾸기 */
+    width: 100%;
+    height: 2px;
+    background: var(--main-color);  /* 이 부분에서 숨겨져 있던 메뉴토글버튼이 보여짐 */
+}
+
+.header .menu-toggle-btn span:nth-child(2) {
+    margin: 5px 0;  /* 메뉴토글버튼이 햄버거 모양으로 */
+}
 
 
 /* 태블릿용 CSS */
@@ -35,6 +109,9 @@
         margin-top: 124px;
     }
 
+    .m-divider {
+        margin-top: 124px;
+    }
     
 }
 
