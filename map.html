@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f94617fe70abc745b8d1e12685fba86e"></script>
+    <title>카카오 지도 엽습하기</title>
+</head>
+<body>
+    <div id="map" style="width: 500px; height: 400px;"></div><br />
+    <div id="map2" style="width: 500px; height: 400px;"></div><br />
+    <div id="map3" style="width: 500px; height: 400px;"></div><br />
+    <div id="roadview" style="width: 500px; height: 400px;">
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new kakao.maps.LatLng(37.58424, 127.00203),  /* LatLng(위도, 경도)   위도 경도찾는 사이트 : map.esran.com */
+            level: 3   /* 지도 확대의 정도 */
+        };
+
+        var map = new kakao.maps.Map(container, options);
+
+        /* 지도의 마크 만들기 */
+        var container2 = document.getElementById('map2');
+        var options2 = {
+            center: new kakao.maps.LatLng(37.58424, 127.00203),
+            level: 3   
+        };
+
+        var map2 = new kakao.maps.Map(container2, options2);
+        var marker2 = new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(37.58424, 127.00203)
+        });
+        marker2.setMap(map2);
+
+        /* 정보 말풍선 만들기 */
+        var container3 = document.getElementById('map3');
+        var options3 = {
+            center: new kakao.maps.LatLng(37.58424, 127.00203),
+            level: 3   
+        };
+
+        var map3 = new kakao.maps.Map(container3, options3);
+        var infoWindow3 = new kakao.maps.InfoWindow({
+            map: map3,
+            position: new kakao.maps.LatLng(37.58424, 127.00203),
+            content: "<div style='padding: 10px;'>SBS아카데미 종로</div>",
+            removable: false   
+            /* true: false 삭제할 수 있는 버튼 생성 */
+            /* removable: false 삭제할 수 없는 버튼 생성 */
+        });
+
+        /* 가장 가까운 곳 기준 로드뷰 만들기 */
+        var roadviewContainer = document.getElementById('roadview');
+        var roadview = new kakao.maps.Roadview(roadviewContainer);
+        var roadviewClient = new kakao.maps.RoadviewClient();
+        var roadviewPos = new kakao.maps.LatLng(37.58424, 127.00203);
+
+        roadviewClient.getNearestPanoId(roadviewPos, 50, function(panoId) {
+            roadview.setPanoId(panoId, roadviewPos);
+        })
+
+        /* 여기서 숫자 50은 로드뷰의 반경,카메라 값 */
+
+    </script>
+</body>
+</html>
