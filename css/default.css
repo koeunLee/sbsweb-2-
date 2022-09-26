@@ -235,6 +235,44 @@
     height: auto;
 }
 
+/* 모바일 - 최근 글 영역(블로그)CSS */
+.blog-section {
+    margin-top: 77px;
+}
+
+.blog-section .sec-tit {
+    margin-bottom: 47px;
+    text-align: center;
+}
+
+.blog-section .blog-list li {
+    width: 100%;
+    margin-top: 45px;
+}
+
+.blog-section .blog-list li:first-child {
+    margin-top: 0;
+}
+
+.blog-section .blog-list li img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.blog-section .blog-list li time {
+    display: block;    /* inline인 time태그를 block으로 바꿈 */
+    margin: 11px 0 10px 0;
+    font-size: 0.875em;
+    color: #9E9E9E;
+}
+
+.blog-section .blog-list li h3 {
+    color: #424242;
+    font-weight: normal;
+    line-height: 1.6;
+}
 
 
 /* 태블릿용 CSS */
@@ -327,6 +365,34 @@
     .work-section .work-list li a:hover .info {
         transform: translateY(32px); 
     }
+
+    /* 태블릿 - 최근 글 영역(블로그)CSS */
+    .blog-section {
+        margin-top: 124px;
+    }
+
+    .blog-section .sec-tit {
+        margin-bottom: 76px;
+    }
+
+    .blog-section .blog-list li {
+        float: left;
+        width: 31.59722%;
+        margin-left: 2.60417%;
+        margin-top: 0;
+    }
+
+    .blog-section .blog-list li:first-child {
+        margin-left: 0;
+    }
+
+    /* 
+    태블릿 전체 = 768px
+    블로그 컨텐츠 3개
+    사이 공간은 2개이고 1개의 공간 너비는 20px
+    (768-20*2)/3 = 728px/3 = 242.6666666666667px
+    블로그 컨텐츠 1개당 가로 = 242.6666666666667/768*100 = 31.59722222222222%
+    공간 1개당 가로 = 20px -> 20/768*100 = 2.604166666666667%   */
     
 }
 
@@ -380,5 +446,39 @@
     .work-section .work-list li {
         width: 25%;
     }
+
+    /* PC - 최근 글 영역(블로그)CSS */
+    .blog-section .sec-tit {
+        text-align: left;   /* 모바일에서 center로 준것을 변경 */
+        float: left;
+        width: 25%;
+    }
+
+    .blog-section .blog-list {
+        float: right;
+        width: 75%;
+    }
+
+    .blog-section .blog-list li {
+        width: 31.27572%;
+        margin-left: 3.08642%;
+    }
     
+    .blog-section .blog-list li:first-child {
+        margin-left: 0;
+    }
+
+    /*
+    PC환경 전체 너비 960px
+    사실상(container) 너비 = 960px의 90% = 864px
+    현재 블로그 컨텐츠의 너비 = 864px의 75% = 648px (좌측 제목 제외)
+
+    648px에서 사이 공간은 2개이고 1개의 공간 너비는 20px
+    블로그 컨텐츠 3개
+    블로그 컨텐츠의 1개당 너비 = (648-20*2)/3 = 608/3 = 202.6666666666667px
+
+    컨텐츠 = 202.6666666666667/648*100 = 31.27572016460905%
+    공간 = 20/648*100 = 3.08641975308642%    */
+    
+
 }
