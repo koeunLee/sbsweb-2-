@@ -1,6 +1,9 @@
 :root {
     --main-color: #3F51B5;
     --main-border-1: #303F9F;
+    --c-color: #616161;
+
+    --c-font: 'PT Serif';
 }
 
 
@@ -101,6 +104,34 @@
     margin: 5px 0;  /* 메뉴토글버튼이 햄버거 모양으로 */
 }
 
+/* 모바일 - 슬라이더 영역 CSS */
+.slider img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 모바일 - 디스플레이 영역 CSS */
+.display-section {
+    margin-top: 59px;
+    text-align: center;
+}
+
+.display-section .sec-tit {
+    margin-bottom: 30px;
+}
+
+.display-section .desc {
+    font-family: var(--c-font);
+    color: var(--c-color);
+    line-height: 1.9;
+}
+
+
+
+
+
 
 /* 태블릿용 CSS */
 @media all and (min-width: 768px) {
@@ -112,11 +143,73 @@
     .m-divider {
         margin-top: 124px;
     }
+
+    /* 태블릿 - 헤더 영역 CSS */
+    .header {
+        position: static;   /* 모바일에서 position: relative; 였던 것을 변경, 화면상 변화없음 */
+        padding: 28px 52px;
+    }
+    .header .gnb {
+        position: static;   /* 모바일에서 position: relative; 였던 것을 기본값으로 되돌림 */
+        float: right;
+        width: auto;    /* 모바일에서 width: 100%; 였던 것을 변경 */
+        background: none;
+        margin-top: 6px;
+    }
+
+    .header .gnb li {
+        float: left;
+        border-bottom: 0;   /* 모바일에서 준 것 삭제 */
+        margin-left: 21px;
+    }
+
+    .header .gnb li a {
+        color: var(--main-color);
+        padding: 0;   /* 모바일에서 준 것 삭제 */
+        font-size: 1.000em;
+    }
+
+    .header .menu-toggle-btn {
+        display: none;    /* 태블릿 환경에서는 햄버거버튼 안보이게 */
+    }
+
+    /* 태블릿 - 디스플레이 영역 CSS */
+    .display-section {
+        margin-top: 95px;
+    }
     
 }
 
 
 /* PC용 CSS */
 @media all and (min-width: 960px) {
+    /* PC - 디스플레이 영역 CSS */
+    .display-section {
+        text-align: left;
+    }
+
+    .display-section .sec-tit {
+        width: 45%;
+        float: left;
+        margin-bottom: 0;    /* 모바일에서 준 것 삭제 */
+    }
+
+    .display-section .desc {
+        width: 45%;
+        float: right;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .display-section .desc::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 2px;
+        height: 44px;
+        background-color: #E0E0E0;
+    }
     
 }
