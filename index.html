@@ -9,6 +9,7 @@
     <link href="images/favicon/favicon.ico" rel="shortcut icon">
     <link href="images/favicon/touch.png" rel="apple-touch-icon-precomposed">
     <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="js/flat.min.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f94617fe70abc745b8d1e12685fba86e"></script>
 </head>
 <body>
@@ -228,6 +229,24 @@
         </section>
         <footer class="footer">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3161.7623774246654!2d126.99983501559645!3d37.58421277979452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3776736b5e9%3A0xc3a6fbcd9804e6a6!2z7KKF66Gc7Lu07ZOo7YSw7ZWZ7JuQLVNCU-yVhOy5tOuNsOuvuOy7tO2TqO2EsOyVhO2KuO2VmeybkA!5e0!3m2!1sko!2skr!4v1663852027595!5m2!1sko!2skr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div id="map2" style="width: 500px; height: 400px;"></div><br />
+            <script>
+                /* 지도의 마크 만들기 */
+                var container2 = document.getElementById('map2');
+                var options2 = {
+                    center: new kakao.maps.LatLng(37.58424, 127.00203),
+                    level: 3   
+                };
+
+                var map2 = new kakao.maps.Map(container2, options2);
+                var marker2 = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng(37.58424, 127.00203)
+                });
+                marker2.setMap(map2);                
+                
+            </script>
+
             <p class="copyright">&copy; COMPANY</p>
         </footer>
     </div>

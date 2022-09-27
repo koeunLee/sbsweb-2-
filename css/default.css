@@ -68,6 +68,7 @@
 }
 
 .header .gnb {
+    display: none;  /* 맨 나중에 설정, 안보이다가 햄버거 버튼 클릭시에만 나타나도록 */
     position: absolute;
     top: 100%;
     left: 0;
@@ -159,7 +160,7 @@
     line-height: 1.5;
 }
 
-/* 모바일 - 최근 작업 CSS */
+/* 모바일 - 최근 작업 영역 CSS */
 .work-section {
     margin-top: 73px;
 }
@@ -274,6 +275,55 @@
     line-height: 1.6;
 }
 
+/* 모바일 - 연락처 영역 CSS */
+.contact-section {
+    margin-top: 109px;
+}
+
+.contact-section .sec-tit {
+    margin-bottom: 47px;
+    text-align: center;
+}
+
+.contact-section .form-box .form input {
+    margin-bottom: 38px;
+    padding-bottom: 13px;
+}
+
+.contact-section .form-box .textarea textarea {
+    height: 162px;
+}
+
+.contact-section .form-box .send-btn {
+    margin-top: 36px;
+    float: right;
+}
+
+.contact-section .form-box .send-btn button {
+    border: 0;
+    background-color: var(--main-color);
+    color: #FFF;
+    padding: 15px;
+    font-family: 'Montserrat';
+    cursor: pointer;
+}
+
+/* 모바일 - 푸터 영역 CSS */
+.footer {
+    margin-top: 104px;
+}
+
+.footer iframe {
+    width: 100%;
+    height: 320px;
+}
+
+.footer p {
+    margin: 21px 0;
+    text-align: center;
+    color: var(--main-color);
+}
+
 
 /* 태블릿용 CSS */
 @media all and (min-width: 768px) {
@@ -292,6 +342,7 @@
         padding: 28px 52px;
     }
     .header .gnb {
+        display: block;   /* 모바일에서 display: none;한 것을 변경 */
         position: static;   /* 모바일에서 position: relative; 였던 것을 기본값으로 되돌림 */
         float: right;
         width: auto;    /* 모바일에서 width: 100%; 였던 것을 변경 */
@@ -307,7 +358,7 @@
 
     .header .gnb li a {
         color: var(--main-color);
-        padding: 0;   /* 모바일에서 준 것 삭제 */
+        padding: 0;    /* 모바일에서 준 것 삭제 */
         font-size: 1.000em;
     }
 
@@ -344,7 +395,7 @@
         margin-left: 0;
     }
 
-    /* 태블릿 - 최근 작업 CSS */
+    /* 태블릿 - 최근 작업 영역 CSS */
     .work-section {
         margin-top: 118px;
     }
@@ -393,7 +444,50 @@
     (768-20*2)/3 = 728px/3 = 242.6666666666667px
     블로그 컨텐츠 1개당 가로 = 242.6666666666667/768*100 = 31.59722222222222%
     공간 1개당 가로 = 20px -> 20/768*100 = 2.604166666666667%   */
-    
+
+    /* 태블릿 - 연락처 영역 CSS */
+    .contact-section {
+        margin-top: 200px;
+    }
+
+    .contact-section .sec-tit {
+        margin-bottom: 76px;
+    }
+
+    .contact-section .form-box .form,
+    .contact-section .form-box .textarea {
+        float: left;
+        width: 48.55324%;
+    }
+
+    .contact-section .form-box .textarea {
+        margin-left: 2.89352%;
+    }
+
+    /* 
+    태블릿 전체 너비 = 768px
+    양쪽에 5%의 빈공간 있음
+    -> 실제 너비 : 768*0.9 = 691.2px
+
+    사이의 빈공간 1개 = 20px
+    컨텐츠 2개 = (691.2-20)/2 -> 1개당 335.6px
+
+    공간 = 20/691.2*100 = 2.893518518518519%
+    컨텐츠 = 335.6/691.2*100 = 48.55324074074074%
+    */
+
+    .contact-section .form-box .form input:last-child {
+        margin-bottom: 0;    /*  모바일에서 준 것인데 맨 마지막 것만 삭제 */
+    }
+
+    /* 태블릿 - 푸터 영역 CSS */
+    .footer iframe {
+        height: 450px;
+    }
+
+    .footer p {
+        margin: 34px 0;
+    }
 }
 
 
@@ -442,7 +536,7 @@
     컨텐츠 1개당 가로 = 225px -> 225/960*100 = 23.4375%
     공간 1개당 가로 = 20px -> 20/960*100 = 2.083333333333333%   */
 
-    /* PC - 최근 작업 CSS */
+    /* PC - 최근 작업 영역 CSS */
     .work-section .work-list li {
         width: 25%;
     }
@@ -451,17 +545,17 @@
     .blog-section .sec-tit {
         text-align: left;   /* 모바일에서 center로 준것을 변경 */
         float: left;
-        width: 25%;
+        width: 30%;
     }
 
     .blog-section .blog-list {
         float: right;
-        width: 75%;
+        width: 70%;
     }
 
     .blog-section .blog-list li {
-        width: 31.27572%;
-        margin-left: 3.08642%;
+        width: 31.12875%;
+        margin-left: 3.30688%;
     }
     
     .blog-section .blog-list li:first-child {
@@ -471,14 +565,46 @@
     /*
     PC환경 전체 너비 960px
     사실상(container) 너비 = 960px의 90% = 864px
-    현재 블로그 컨텐츠의 너비 = 864px의 75% = 648px (좌측 제목 제외)
+    현재 블로그 컨텐츠의 너비 = 864px의 70% = 604.8px (좌측 제목 제외)
 
-    648px에서 사이 공간은 2개이고 1개의 공간 너비는 20px
+    604.8px에서 사이 공간은 2개이고 1개의 공간 너비는 20px
     블로그 컨텐츠 3개
-    블로그 컨텐츠의 1개당 너비 = (648-20*2)/3 = 608/3 = 202.6666666666667px
+    블로그 컨텐츠의 1개당 너비 = (604.8-20*2)/3 = 564.8/3 = 188.2666666666667px
 
-    컨텐츠 = 202.6666666666667/648*100 = 31.27572016460905%
-    공간 = 20/648*100 = 3.08641975308642%    */
+    컨텐츠 = 188.2666666666667/604.8*100 = 31.12874779541446%
+    공간 = 20/604.8*100 = 3.306878306878307%    */
     
+    /* PC - 연락처 영역 CSS */
+    .contact-section .sec-tit {
+        float: left;
+        width: 30%;
+        text-align: left;
+        margin-bottom: 0;
+    }
 
+    .contact-section .form-box {
+        float: right;
+        width: 70%;
+    }
+
+    .contact-section .form-box .form,
+    .contact-section .form-box .textarea {
+        width: 48.34656%;
+    }
+
+    .contact-section .form-box .textarea {
+        margin-left: 3.30688%;
+    }
+
+    /*
+    PC환경 전체 너비 960px
+    사실상(container) 너비 = 960px의 90% = 864px
+    현재 컨텐츠의 너비 = 864px의 70% = 604.8px (좌측 제목 제외)
+
+    604.8px에서 사이 공간은 1개이고 1개의 공간 너비는 20px
+    컨텐츠 2개
+    컨텐츠의 1개당 너비 = (604.8-20)/2 = 584.8/2 = 292.4px
+
+    컨텐츠 = 292.4/604.8*100 = 48.34656084656085%
+    공간 = 20/604.8*100 = 3.306878306878307%    */
 }
