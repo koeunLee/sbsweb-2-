@@ -496,9 +496,31 @@
     }
 
     /* 태블릿 - 푸터 영역 CSS */
-    .footer iframe {
+    .footer .map-section {
+        width: 100%;
         height: 450px;
     }
+
+    .footer .map-section #map1,
+    .footer .map-section #map2 {
+        width: 48.69792%;
+        height: 450px;
+        float: left;
+        margin: 0;
+    }
+
+    .footer .map-section #map1 {
+        margin-right: 2.60416%;
+    }
+
+    /*
+    태블릿환경 = 768px
+    지도 2개 = 748px => 개당 374px
+    공간 1개 = 20px
+
+    지도 개당 374/768*100=48.69792%
+    공간 20/768*100=2.60416%
+    */
 
     .footer p {
         margin: 34px 0;
@@ -622,4 +644,22 @@
 
     컨텐츠 = 292.4/604.8*100 = 48.34656084656085%
     공간 = 20/604.8*100 = 3.306878306878307%    */
+
+    /* PC - 푸터 영역 CSS */
+    .footer .map-section #map1,
+    .footer .map-section #map2 {
+        width: 48.95833%;
+    }
+
+    .footer .map-section #map1 {
+        margin-right: 2.08334%;
+    }
+    /*
+    태블릿환경 = 960px
+    지도 2개 = 940px => 개당 470px
+    공간 1개 = 20px
+
+    지도 개당 470/960*100=48.95833%
+    공간 20/960*100=2.08334%
+    */
 }
