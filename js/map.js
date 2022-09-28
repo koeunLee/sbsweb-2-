@@ -9,7 +9,7 @@ var map = new kakao.maps.Map(container, option);
 var marker = new kakao.maps.Marker({
     position: new kakao.maps.LatLng(37.58424, 127.00203)
 });
-marker2.setMap(map);
+marker.setMap(map);
 
 // map2-SBS컴퓨터아트학원 서초
 var container2 = document.getElementById('map2');
