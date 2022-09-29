@@ -1,0 +1,168 @@
+:root {
+    --b-color: #ccc;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#container {
+    width: 1000px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+/* 헤더 영역 CSS */
+.header {
+    order: 1;
+}
+
+.header .hotbar {
+    height: 33px;
+    border-bottom: 1px solid var(--b-color);
+    background-color: bisque;
+}
+
+.header .info {
+    height: 73px;
+    background-color: chocolate;
+}
+
+.header .gnb {
+    height: 45px;
+    background-color: darkkhaki;
+}
+
+/* 슬라이더 영역 CSS */
+.slider {
+    order: 2;
+    height: 357px;
+    background-color: forestgreen;
+}
+
+/* 프로모션 영역 CSS */
+.promotion {
+    order: 3;
+    height: 115px;
+    background-color: gold;
+}
+
+/* 컨텐츠 영역 CSS */
+.c1 {
+    order: 4;
+    display: flex;
+    height: 466px;
+    background-color: hotpink;
+}
+
+.c1 .c1-left {
+    width: 308px;
+    padding: 25px 0 19px 0;
+    background-color: indigo;
+}
+
+.c1 .c1-left .plan {
+    height: 212px;
+    margin-right: 25px;
+    background-color: midnightblue;
+}
+
+.c1 .c1-left .academy {
+    height: 188px;
+    margin: 22px 25px 0 0;
+    background-color: navajowhite;
+}
+
+.c1 .c1-mid {
+    width: 403px;
+    padding: 25px 0 19px 0;
+    background-color: khaki;
+}
+
+.c1 .c1-mid .blog {
+    height: 212px;
+    margin-right: 24px;
+    background-color: olive;
+}
+
+.c1 .c1-mid .sample {
+    height: 188px;
+    margin: 22px 24px 0 0;
+    background-color: pink;
+}
+
+.c1 .c1-right {
+    width: 289px;
+    padding: 25px 0 19px 0;  /* 466-441=25,  441-422=19 */
+    background-color: lawngreen;
+}
+
+.c1 .c1-right .recruit {
+    height: 422px;   /* 212+188+22=422 */
+    background-color: red;
+}
+
+/* 컨텐츠 2영역 CSS */
+.c2 {
+    display: flex;
+    height: 218.39px;
+    margin-bottom: 50px;
+    background-color: salmon;
+}
+
+.c2 .contact {
+    width: 283px;
+    margin: 25px 25px 0 0;
+    background-color: thistle;
+}
+
+.c2 .question {
+    width: 477px;  /* 1+20+435+20+1=477 */  /* 477+10=487 */
+    height: 180px;
+    margin: 27px 10px 0 0;   /* 이 부분 강사님께서 margin: 27px 35px 0 0; 라고 하셨는데 35px이 나온 것이 이상해서요... 1000-283-205=512 말고 1000-283-25-205=487 로 하여 477px을 빼면 margin-right값이 10px 이 아닐까... 합니다. */
+    /* 그리고 컨텐츠 2영역과 푸터에는 order 안줘도 되는지요? */
+    background-color: violet;
+}
+
+.c2 .social {
+    width: 205px;   /* 283+25+477+10+205=1000 */
+    height: 180px;
+    margin-top: 27px;
+    background-color: wheat;
+}
+
+/* 푸터 영역 CSS */
+.footer {
+    height: 422px;
+    padding: 25px 0 30px 0;
+    border-top: 1px solid var(--b-color);
+    background-color: yellowgreen;
+}
+
+.footer .copyright {
+    display: flex;
+    height: 232px;
+    margin-bottom: 10px;
+    background-color: aquamarine;
+}
+
+.footer .copyright .business {
+    width: 668px;
+    background-color: brown;
+}
+
+.footer .copyright .guarantee {
+    width: 258px;
+    height: 140px;
+    padding: 0 0 23px 23px;
+    border-left: 1px solid var(--b-color);
+    background-color: cornflowerblue;
+}
+
+.footer .banner {
+    height: 140px;
+    padding: 20px 0 20px 0;
+    background-color: darkgray;
+}
