@@ -121,8 +121,7 @@
 .c2 .question {
     width: 477px;  /* 1+20+435+20+1=477 */  /* 477+10=487 */
     height: 180px;
-    margin: 27px 10px 0 0;   /* 이 부분 강사님께서 margin: 27px 35px 0 0; 라고 하셨는데 35px이 나온 것이 이상해서요... 1000-283-205=512 말고 1000-283-25-205=487 로 하여 477px을 빼면 margin-right값이 10px 이 아닐까... 합니다. */
-    /* 그리고 컨텐츠 2영역과 푸터에는 order 안줘도 되는지요? */
+    margin: 27px 10px 0 0;   
     background-color: violet;
 }
 
