@@ -11,7 +11,6 @@
     width: 1000px;
     max-width: 1000px;
     margin: 0 auto;
-    background-color: aqua;
 }
 
 /* 헤더 영역 CSS */
@@ -22,17 +21,132 @@
 .header .hotbar {
     height: 33px;
     border-bottom: 1px solid var(--b-color);
-    background-color: bisque;
+}
+
+.hotbar .hotbar-list {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 13px;
+}
+
+.hotbar .hotbar-list li a {
+    display: block;
+    padding: 4px 0 5px 21px;   /* 강사님께서 padding: 6px 0 7px 21px; 으로 조정하셨는데 이상해서 원래대로 두고 line-height: 24px;와 #blog-icon내용 추가해보았습니다.  */
+    color: #777;
+    line-height: 24px;   /* 33-4-5=24 */
+}
+
+#blog-icon {
+    position: relative;
+    top: 4px;
+    right: 3px;
+}
+
+.hotbar .hotbar-list li:nth-child(3) a {
+    color: #333;
+    font-weight: bold;
 }
 
 .header .info {
+    display: flex;
+    justify-content: space-between;
     height: 73px;
-    background-color: chocolate;
 }
 
-.header .gnb {
+.info .info-right .mypage-list {
+    display: flex;
+}
+
+.mypage-list li a {
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+}
+
+.mypage-list .mypage-nobox a {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    padding: 24px 0;
+}
+
+.mypage-list .mypage-box a {
+    position: relative;
+    width: 71px;
+    height: 55px;
+    line-height: 55px;
+    padding: 24px 0;
+}
+
+.mypage-list .mypage-box a::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 73px;
+    background-color: var(--b-color);
+    position: absolute;
+    top: 0;
+    left: -1.6px;   /*아래 gnb와 선을 맞추기 위해 */
+}
+
+.mypage-list li:nth-child(4) {
+    background: url('../images/s_images/ic_my.gif') center 15px no-repeat;
+}
+
+.mypage-list li:nth-child(4) a {
+    color: #FD7B28;
+}
+
+.mypage-list li:nth-child(5) {
+    position: relative;
+    background: url('../images/s_images/ic_fmn.gif') center 15px no-repeat;
+}
+
+.mypage-list li:nth-child(5) a {
+    color: #333;
+}
+
+.mypage-list li:nth-child(5)::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 73px;
+    background-color: var(--b-color);
+    position: absolute;
+    top: 0;
+    left: 70px;    
+}
+
+.header .gnb-wrap {
     height: 45px;
-    background-color: darkkhaki;
+}
+
+.gnb-wrap .gnb {
+    display: flex;
+}
+
+.gnb-wrap .gnb li {
+    width: 142.8px;   /* 1000/7=142.8571428571429 */
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+}
+
+.gnb-wrap .gnb .gnb-1 {
+    background-color: #FD7B28;
+    border-left: 1px solid #FF690A;
+}
+
+.gnb-wrap .gnb .gnb-2 {
+    background-color: #888;
+    border-right: 1px solid #A0A0A0;
+}
+
+.gnb-wrap .gnb li a {
+    color: white;
+    font-weight: bold;
+    letter-spacing: -1px;   /* 글자의 자간 */
 }
 
 /* 슬라이더 영역 CSS */
