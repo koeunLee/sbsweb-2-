@@ -153,14 +153,128 @@
 .slider {
     order: 2;
     height: 357px;
-    background-color: forestgreen;
+    position: relative;  /* 자식요소에 position: absolute; 를 주기 위해 */
+}
+
+.slider .slider-img {
+    height: 100%;
+    background: url(../images/p_images/IT_메인_경진대회.png) rgb(245, 232, 201);
+}
+
+.slider .slider-page {
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 327px;
+}
+
+.slider .slider-page span {
+    display: block;
+    float: left;
+    background: url(../images/s_images/pagi_off.png) no-repeat;
+    width: 14px;
+    height: 14px;
+    margin-right: 3px;
+}
+
+.slider .slider-left-btn {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: calc(50% - 32px);
+    left: -100px;
+    /* display: flex;
+    align-items: center; */
+    background: url(../images/s_images/btn_left_arr.png) no-repeat center center;
+}
+
+.slider .slider-right-btn {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: calc(50% - 32px);
+    right: -100px;
+    /* display: flex;
+    align-items: center; */
+    background: url(../images/s_images/btn_right_arr.png) no-repeat center center;
+}
+
+.slider .slider-left-btn span,
+.slider .slider-right-btn span {
+    display: none;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(100, 100, 100, 0.2);
+    border-radius: 50%;
+}
+
+.slider .slider-left-btn:hover span, 
+.slider .slider-right-btn:hover span {
+    display: block;
 }
 
 /* 프로모션 영역 CSS */
 .promotion {
     order: 3;
     height: 115px;
-    background-color: gold;
+}
+
+.promotion .promo-list {
+    display: flex;
+}
+
+.promotion .promo-list li {
+    width: 166.66666px;    /* 1000/6=166.166.6666666666667 */
+    height: 115px;
+    text-align: center;
+    position: relative;
+}
+
+.promo-list li:not(:last-child)::after {
+    content: "";
+    width: 1px;        /* 가상선택자로 선 넣기 */
+    height: 70px;
+    background-color: var(--b-color);
+    position: absolute;
+    top: 32px;
+    right: 0;
+}
+
+.promo-list li a {
+    display: block;   /* inline 요소를 block 요소로 바꿈 */
+    color: #333;
+}
+
+.promo-list li a span {
+    display: block;   /* inline 요소를 block 요소로 바꿈 */
+    padding-top: 85px;
+    font-size: 15px;
+}
+
+.promo-list li:nth-child(1) {
+    background: url(../images/p_images/m_qmenu_ic1.gif) center 22px no-repeat;
+}
+
+.promo-list li:nth-child(2) {
+    background: url(../images/p_images/m_qmenu_ic2.gif) center 22px no-repeat;
+}
+
+.promo-list li:nth-child(3) {
+    background: url(../images/p_images/m_qmenu_ic4_1.gif) center 22px no-repeat;
+}
+
+.promo-list li:nth-child(4) {
+    background: url(../images/p_images/m_qmenu_ic5.gif) center 22px no-repeat;
+}
+
+.promo-list li:nth-child(5) {
+    background: url(../images/p_images/m_qmenu_ic7.png) center 22px no-repeat;
+}
+
+.promo-list li:nth-child(6) {
+    background: url(../images/p_images/m_qmenu_ic8.png) center 22px no-repeat;
 }
 
 /* 컨텐츠 영역 CSS */
