@@ -91,7 +91,7 @@
 }
 
 .mypage-list li:nth-child(4) {
-    background: url('../images/s_images/ic_my.gif') center 15px no-repeat;
+    background: url(../images/s_images/ic_my.gif) center 15px no-repeat;
 }
 
 .mypage-list li:nth-child(4) a {
@@ -100,7 +100,7 @@
 
 .mypage-list li:nth-child(5) {
     position: relative;
-    background: url('../images/s_images/ic_fmn.gif') center 15px no-repeat;
+    background: url(../images/s_images/ic_fmn.gif) center 15px no-repeat;
 }
 
 .mypage-list li:nth-child(5) a {
@@ -288,19 +288,128 @@
 .c1 .c1-left {
     width: 308px;
     padding: 25px 0 19px 0;
-    background-color: indigo;
 }
 
 .c1 .c1-left .plan {
     height: 212px;
     margin-right: 25px;
-    background-color: midnightblue;
+    background-color: #FD7B28;
+    color: white;
+    border-radius: 4px;
+    position: relative;   /* 자식요소인 .plan-search 에 position: absolute; 을 주기 위해 */
+}
+
+.plan form h3 {
+    font-size: 17px;
+    padding: 12px 15px 25px 15px;  /* padding: 15px 15px 30px 15px; 이었는데 수정 */
+}
+
+.plan form .plan-form {
+    padding: 0 10px 20px 10px;
+}
+
+.plan-form li {
+    height: 34px;
+    padding-bottom: 6px;
+}
+
+.plan-form li label {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 5px;
+    letter-spacing: -1px;
+}
+
+.plan-form li select {
+    height: 100%;    /* 34px */
+    padding: 5px;
+    line-height: 24px;    /* 위아래 패딩 제외 글씨 세로 중앙정렬 */
+    background: url(../images/s_images/select_arr.png) right center no-repeat transparent;
+    border: 1px solid #FEBD94;
+    border-radius: 3px;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    color: #5F3316;
+    appearance: none;  /* 기본select 박스의 장식을 지운다 */
+}
+
+.plan-form li:nth-child(1) select {
+    width: 217px;
+}
+
+.plan-form li:nth-child(2) select {
+    width: 86px;
+}
+
+.plan form .plan-search {
+    width: 100%;
+    background: url(../images/s_images/ic_d_sch.png) 75px center no-repeat #EE5D01;
+    position: absolute;
+    bottom: 0;
+    border-radius: 4px;
+}
+
+.plan form .plan-search a {
+    display: block;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    height: 43.391px;
+    line-height: 43.391px;
 }
 
 .c1 .c1-left .academy {
     height: 188px;
     margin: 22px 25px 0 0;
-    background-color: navajowhite;
+    background: url(../images/s_images/main_bg_location.png) #EFF0F3 115% -20px no-repeat;
+}
+
+.academy h2 {
+    font-weight: normal;
+    padding: 28px 0 18px 0;
+    font-size: 19px;
+    letter-spacing: -1.5px;
+    text-align: center;
+    position: relative;
+}
+
+.academy h2 span {
+    display: block;
+    position: absolute;
+    top: 55.5px;
+    right: 33px;
+}
+
+.academy .academy-list {
+    display: flex;
+    justify-content: space-evenly;  /* justify-content: space-around; 와 겉보기에 차이가 없음 */
+}
+
+.academy .academy-list li a {
+    display: block;
+    width: 65px;
+    height: 65px;
+    background: url(../images/s_images/loca_bullet.png) center 16px no-repeat white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 65px;
+
+    font-size: 15px;
+    letter-spacing: -0.5px;
+    color: #333;
+
+    position: relative;
+
+    transition: all 0.2s;
+}
+
+.academy .academy-list li a:hover {
+    background: url(../images/s_images/loca_bullet.png) center 16px no-repeat #FD7B28;
+    box-shadow: 0 10px 15px rgb(248, 113, 27, 30%);
+    margin-top: -3px;
+    color: white;
+    font-weight: bold;
 }
 
 .c1 .c1-mid {
